@@ -3,7 +3,8 @@ testing
 produccion
 
 [testing]
-127.0.0.1 
+localhost ansible_connection=local
 
 [produccion]
-localhost ansible_connection=local 
+localhost ansible_connection=local
+ 

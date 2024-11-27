@@ -1,0 +1,8 @@
+---
+- name: Permitir que el grupo GProfesores use sudo sin contraseña
+  ansible.builtin.copy:
+    content: |
+      %GProfesores ALL=(ALL) NOPASSWD: ALL
+    dest: /etc/sudoers.d/gprofesores
+    mode: '0440'
+

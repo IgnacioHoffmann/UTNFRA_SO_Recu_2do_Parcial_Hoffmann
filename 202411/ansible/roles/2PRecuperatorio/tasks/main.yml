@@ -1,8 +1,25 @@
 ---
-# tasks file for 2PRecuperatorio
+- name: Crear grupo GProfesores
+  ansible.builtin.group:
+    name: GProfesores
+    state: present
 
- - name: "Rol: 2PRecuperatorio"
-   debug:
-     msg: "Inicio de tareas dentro del Rol: 2PRecuperatorio"
+- name: Crear grupo GAlumnos
+  ansible.builtin.group:
+    name: GAlumnos
+    state: present
+
+- name: Crear usuario profesor
+  ansible.builtin.user:
+    name: profesor
+    groups: GProfesores
+    state: present
+
+- name: Crear usuario alumno
+  ansible.builtin.user:
+    name: alumno
+    groups: GAlumnos
+    state: present
+
 
 

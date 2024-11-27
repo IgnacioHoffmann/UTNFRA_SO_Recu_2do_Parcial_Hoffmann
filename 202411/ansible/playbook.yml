@@ -1,11 +1,11 @@
 ---
-- hosts: all
+- name: Configuración del sistema para el parcial
+  hosts: all
+  become: true
 
-  tasks:
-    - include_role:
-        name: 2PRecuperatorio
-    
-    - name: "Otra tarea"
-      debug:
-        msg: "Despues de la ejecucion del rol"
+  roles:
+    - 2PRecuperatorio
+    - Crea_Carpetas_Hoffmann
+    - Cambia_Propiedad_Hoffmann
+    - Sudoers_Hoffmann
 
